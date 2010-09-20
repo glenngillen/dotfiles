@@ -1,0 +1,60 @@
+# changing directory to code project
+function c { cd ~/Development/ruby/$1; }
+
+# alternative to "rails" command to use templates
+function railsapp {
+  template=$1
+  appname=$2
+  shift 2
+  rails $appname -m ~/Development/ruby/rails-templates/$template.rb $@
+}
+
+function mategem {
+  GEM="$1"
+  [ -z "$GEM" ] && usage
+  mate "$(gem environment gemdir)/gems/$GEM"
+}
+
+function pg_start {
+  pg_ctl start --pgdata /Users/glenngillen/Library/Application\ Support/postgresql/data --silent &
+}
+
+function unmount {
+  for share in media music photos downloads backups glenn
+  do
+    if ! mount | grep "on /Volumes/$share" > /dev/null
+    then
+      sudo umount /Volumes/$share
+    fi
+  done
+}
+
+function mount_bender_local {
+  ssh `cat ~/.bender_credentials | cut -d : -f 1`@`cat ~/.bender_local_hostname` bin/wakebender
+  for share in media music photos downloads backups
+  do
+    if [ ! -d "/Volumes/$share" ]
+    then
+      mkdir -p /Volumes/$share
+    fi
+    if ! mount | grep "on /Volumes/$share" > /dev/null
+    then
+      mount_afp afp://`cat ~/.bender_credentials`@`cat ~/.bender_local_hostname`/$share /Volumes/$share
+    fi
+  done
+}
+
+function mount_bender_remote {
+  ssh `cat ~/.bender_credentials | cut -d : -f 1`@`cat ~/.bender_remote_hostname` bin/wakebender
+  for share in media music photos downloads backups
+  do
+    if [ ! -d "/Volumes/$share" ]
+    then
+      mkdir -p /Volumes/$share
+    fi
+    if ! mount | grep "on /Volumes/$share" > /dev/null
+    then
+      mount_afp afp://`cat ~/.bender_credentials`@`cat ~/.bender_remote_hostname`/$share /Volumes/$share
+    fi
+  done
+}

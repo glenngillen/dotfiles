@@ -1,0 +1,7 @@
+export EC2_HOME=~/.ec2
+export EC2_PRIVATE_KEY=pk-ZDPKW2KLU6WGQ4UUDEA74D75PCJDHCCQ.pem
+export EC2_CERT=cert-ZDPKW2KLU6WGQ4UUDEA74D75PCJDHCCQ.pem
+export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Home/
+export PATH="$HOME/.gem/ruby/1.8/bin:$HOME/bin:$PATH"
+export PATH=$PATH:$EC2_HOME/bin
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH

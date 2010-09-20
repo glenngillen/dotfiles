@@ -1,0 +1,4 @@
+# Bash dotfiles
+
+A collection of files, functions, and scripts I install on a new machine
+to make life easier.

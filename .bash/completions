@@ -1,0 +1,6 @@
+source ~/.bash/completion_scripts/git
+source ~/.bash/completion_scripts/gem
+complete -C ~/.bash/completion_scripts/rake -o default rake
+complete -C ~/.bash/completion_scripts/project -o default c
+complete -C ~/.bash/completion_scripts/capistrano -o default cap
+complete -F _mategem -o dirnames mategem
