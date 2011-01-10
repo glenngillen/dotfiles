@@ -16,7 +16,7 @@ class ProjectCompletion
   end
   
   def projects
-    `ls ~/Development/ruby/`.split
+    `ls ~/Development/`.split
   end
 end
  
