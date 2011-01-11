@@ -27,5 +27,5 @@ __git_ps1 ()
 }
 
 PS1="\u@\h \e[0;32m\w\e[m\e[0;33m\$(__git_ps1)\e[m\$ "
-export EDITOR="vi"
+export EDITOR="vim"
 export LC_CTYPE=en_US.UTF-8
