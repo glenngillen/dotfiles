@@ -29,7 +29,7 @@ set directory=$HOME/.vim/tmp/,.
 
 set laststatus=2
 
-let NERDTreeIgnore=['\.git$', '^tmp$', '^log$','^\..*\.swp$']
+let NERDTreeIgnore=['\.git$', '^tmp$', '^log$','^\..*\.swp$','\.bundle$']
 let NERDTreeShowHidden=1
 let NERDTreeChDirMode=1
 colorscheme vibrantink
