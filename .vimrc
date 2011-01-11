@@ -19,12 +19,14 @@ set showmode
 set title
 set visualbell
 set incsearch
+set hidden
 
 set autochdir
+set wildmenu
 set wildmode=list:longest
 set nobackup
 set nowritebackup
-set directory=$HOME/.vim/tmp/,.
+set directory=$HOME/tmp
 
 
 set laststatus=2
@@ -35,3 +37,4 @@ let NERDTreeChDirMode=1
 colorscheme vibrantink
 map <LEADER>t :FuzzyFinderTextMate<Enter>
 map <F2> :NERDTreeToggle<Enter>
+map <F12> :ruby finder.rescan!<ENTER>
