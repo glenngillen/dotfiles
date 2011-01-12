@@ -21,9 +21,9 @@ set visualbell
 set incsearch
 set hidden
 
-set autochdir
 set wildmenu
 set wildmode=list:longest
+set wildignore+=*.o,*.obj,.git,tmp,log
 set nobackup
 set nowritebackup
 set directory=$HOME/tmp
@@ -36,3 +36,8 @@ let NERDTreeShowHidden=1
 let NERDTreeChDirMode=1
 colorscheme vibrantink
 map <F2> :NERDTreeToggle<Enter>
+imap <C-h> <Left>
+imap <C-j> <Down>
+imap <C-k> <Up>
+imap <C-l> <Right>
+
