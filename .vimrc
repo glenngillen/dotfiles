@@ -35,6 +35,4 @@ let NERDTreeIgnore=['\.git$', '^tmp$', '^log$','^\..*\.swp$','\.bundle$']
 let NERDTreeShowHidden=1
 let NERDTreeChDirMode=1
 colorscheme vibrantink
-map <LEADER>t :FuzzyFinderTextMate<Enter>
 map <F2> :NERDTreeToggle<Enter>
-map <F12> :ruby finder.rescan!<ENTER>
