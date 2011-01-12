@@ -28,8 +28,8 @@ set nobackup
 set nowritebackup
 set directory=$HOME/tmp
 
-
 set laststatus=2
+call pathogen#runtime_append_all_bundles()
 
 let NERDTreeIgnore=['\.git$', '^tmp$', '^log$','^\..*\.swp$','\.bundle$']
 let NERDTreeShowHidden=1
