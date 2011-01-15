@@ -1,9 +1,9 @@
 scriptencoding utf-8
+set nowrap
 set nocompatible
 set autoindent
 set smartindent
 set showmatch
-set wrap
 set nolist
 set softtabstop=2
 set scrolloff=3
