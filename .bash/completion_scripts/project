@@ -1,24 +1,28 @@
 #!/usr/bin/env ruby
- 
+
 class ProjectCompletion
   def initialize(command)
     @command = command
   end
-  
+
   def matches
-    projects.select do |task|
-      task[0, typed.length] == typed
+    projects.select do |project|
+      project =~ /\/#{typed}/
     end
   end
-  
+
   def typed
     @command[/\s(.+?)$/, 1] || ''
   end
-  
+
   def projects
-    `ls ~/Development/`.split
+    Dir["#{home}/Development/*","#{home}/Development/*/*"].select{|d| File.directory?(d)}
+  end
+
+  def home
+    ENV["HOME"]
   end
 end
- 
+
 puts ProjectCompletion.new(ENV["COMP_LINE"]).matches
 exit 0

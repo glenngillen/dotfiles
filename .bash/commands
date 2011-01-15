@@ -1,5 +1,5 @@
 # changing directory to code project
-function c { cd ~/Development/ruby/$1; }
+function c { cd $1; }
 
 # alternative to "rails" command to use templates
 function railsapp {
