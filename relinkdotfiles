@@ -1,0 +1,18 @@
+#!/bin/sh
+rm -rf ~/.bash
+rm -rf ~/.bash_profile
+rm -rf ~/.bashrc
+rm -rf ~/.gemrc
+rm -rf ~/.gitconfig
+rm -rf ~/.gvimrc
+rm -rf ~/.vim
+rm -rf ~/.vimrc
+
+ln -s ~/dotfiles/.bash ~/.bash
+ln -s ~/dotfiles/.bash_profile ~/.bash_profile
+ln -s ~/dotfiles/.bashrc ~/.bashrc
+ln -s ~/dotfiles/.gemrc ~/.gemrc
+ln -s ~/dotfiles/.gitconfig ~/.gitconfig
+ln -s ~/dotfiles/.gvimrc ~/.gvimrc
+ln -s ~/dotfiles/.vim ~/.vim
+ln -s ~/dotfiles/.vimrc ~/.vimrc
