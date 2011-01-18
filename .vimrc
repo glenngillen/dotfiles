@@ -89,6 +89,7 @@ autocmd BufReadPost *
 
 
 map <silent> <leader>d :NERDTreeToggle<Enter>
+map <silent> <leader>t :CommandT<Enter>
 map <leader>F :Ack<space>
 map <silent> <leader>s :RunRubyFocusedUnitTest<Enter>
 map <silent> <leader>S :RunAllRubyTests<Enter>
