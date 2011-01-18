@@ -6,7 +6,8 @@ set smartindent
 set showmatch
 set nolist
 set softtabstop=2
-set scrolloff=3
+set scrolloff=5
+set sidescrolloff=5
 set number
 set ruler
 set backspace=indent,eol,start
@@ -15,6 +16,11 @@ set ignorecase
 set smartcase
 filetype plugin indent on
 set list listchars=tab:»·,trail:·
+set isk+=_,$,@,%,#,-,?,%,& " none of these should be word dividers, so make them not be
+set lz " do not redraw while running macros (much faster) (LazyRedraw)
+" set spell
+" set spelllang=en_ca,en_gb,en_us,en
+set ttyfast
 
 set showcmd
 set showmode
@@ -63,11 +69,23 @@ autocmd BufReadPost *
     \   exe "normal! g`\"" |
     \ endif
 
-vsplit
 
 map <silent> <leader>d :NERDTreeToggle<Enter>
 map <leader>F :Ack<space>
+map <down> <nop>
+map <left> <nop>
+map <right> <nop>
+map <up> <nop>
+
+imap <down> <nop>
+imap <left> <nop>
+imap <right> <nop>
+imap <up> <nop>
+
 imap <C-h> <Left>
 imap <C-j> <Down>
 imap <C-k> <Up>
 imap <C-l> <Right>
+if isdirectory(@%) == 1
+	vsplit
+endif
