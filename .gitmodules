@@ -52,3 +52,6 @@
 [submodule ".vim/bundle/greplace"]
 	path = .vim/bundle/greplace
 	url = https://github.com/vim-scripts/greplace.vim.git
+[submodule ".vim/bundle/ruby_focused_unit_test"]
+	path = .vim/bundle/ruby_focused_unit_test
+	url = https://github.com/drewolson/ruby_focused_unit_test_vim.git
