@@ -32,7 +32,7 @@ set shiftround " when at 3 spaces, and I hit > ... go to 4, not 5
                       " fold manually)
     set foldopen=block,hor,mark,percent,quickfix,tag " what movements
                                                       " open folds
-    function SimpleFoldText() " {
+    function! SimpleFoldText() " {
         return getline(v:foldstart).' '
     endfunction " }
     set foldtext=SimpleFoldText() " Custom fold text function
@@ -82,10 +82,10 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
-autocmd BufReadPost *
-    \ if line("'\"") > 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
+" autocmd BufReadPost *
+"     \ if line("'\"") > 1 && line("'\"") <= line("$") |
+"     \   exe "normal! g`\"" |
+"     \ endif
 
 
 map <silent> <leader>d :NERDTreeToggle<Enter>
@@ -93,6 +93,8 @@ map <silent> <leader>t :CommandT<Enter>
 map <leader>F :Ack<space>
 map <silent> <leader>s :RunRubyFocusedUnitTest<Enter>
 map <silent> <leader>S :RunAllRubyTests<Enter>
+command! Reloadvimsource source $MYVIMRC
+nmap <silent> <leader>. :Reloadvimsource<Enter>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
