@@ -18,3 +18,7 @@
 	untracked = cyan
 [branch]
 	autosetupmerge = true
+[heroku]
+	account = work
+[push]
+	default = matching
