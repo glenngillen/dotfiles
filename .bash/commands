@@ -1,6 +1,15 @@
 # changing directory to code project
 function c { cd $1; }
 
+function cloudset {
+  if [ ! -n "$1" ]; then
+    export HEROKU_HOST="$1.herokudev.com"
+  else
+    export HEROKU_HOST="www.heroku.com"
+  fi
+  echo "HEROKU_HOST now set to $HEROKU_HOST"
+}
+
 # alternative to "rails" command to use templates
 function railsapp {
   template=$1
