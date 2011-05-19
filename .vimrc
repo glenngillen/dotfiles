@@ -65,7 +65,6 @@ let NERDChristmasTree = 1
 let NERDTreeHighlightCursorline = 1
 let NERDTreeShowHidden = 1
 
-colorscheme vibrantink
 let mapleader = ","
 
 " kill whitespace on save

@@ -1,4 +1,5 @@
 set gfn=Monaco:h12
+colorscheme vibrantink
 set guioptions-=L
 set guioptions-=r
 set guioptions-=T

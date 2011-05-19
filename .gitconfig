@@ -1,6 +1,6 @@
 [user]
 	name = Glenn Gillen
-	email = me@glenngillen.com 
+	email = me@glenngillen.com
 [color]
 	ui = auto
 [color "branch"]
@@ -21,4 +21,15 @@
 [heroku]
 	account = work
 [push]
-	default = matching
+	default = tracking
+[github]
+	user = rubypond
+	token = abcd93e1bb968acf6ffd027ad4fcaa64
+[alias]
+	ci = commit
+	co = checkout
+	logl = log --pretty=oneline --abbrev-commit --decorate
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %f %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --all
+	unadd = update-index --force-remove
+	ls = !git ls-files -m | xargs ls -la
+

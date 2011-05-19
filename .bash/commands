@@ -3,11 +3,21 @@ function c { cd $1; }
 
 function cloudset {
   if [ ! -n "$1" ]; then
-    export HEROKU_HOST="$1.herokudev.com"
+    unset HEROKU_HOST
+    unset HEROKU_DOMAIN
+    unset ION_USER
+    unset CORE_URL
   else
-    export HEROKU_HOST="www.heroku.com"
+    export HEROKU_HOST="https://api.$1.herokudev.com"
+    export CORE_URL="https://api.$1.herokudev.com"
+    export HEROKU_DOMAIN="$1.herokudev.com"
+    export ION_USER="$1"
+    export ION_HOST="$1-ion.heroku.com"
   fi
   echo "HEROKU_HOST now set to $HEROKU_HOST"
+  echo "CORE_URL now set to $CORE_URL"
+  echo "HEROKU_DOMAIN now set to $HEROKU_DOMAIN"
+  echo "ION_USER now set to $ION_USER"
 }
 
 # alternative to "rails" command to use templates
@@ -66,4 +76,9 @@ function mount_bender_remote {
       mount_afp afp://`cat ~/.bender_credentials`@`cat ~/.bender_remote_hostname`/$share /Volumes/$share
     fi
   done
+}
+
+function db {
+  rvm 1.8.7
+  BUNDLE_GEMFILE=~/Development/heroku/docbrown/Gemfile bundle exec ~/Development/heroku/docbrown/bin/docbrown $@
 }

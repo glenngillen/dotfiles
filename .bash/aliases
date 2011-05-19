@@ -1,6 +1,6 @@
 # cd
 alias ..='cd ..'
- 
+
 # ls
 alias ls="ls -F"
 alias l="ls -lAh"
@@ -8,6 +8,7 @@ alias ll="ls -l"
 alias la='ls -A'
 
 # git
+alias git=hub
 alias gl='git pull'
 alias gpu='git push'
 alias gpr='git pull --rebase'
@@ -18,7 +19,7 @@ alias gco='git checkout'
 alias gb='git branch'
 alias gs='git status'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
- 
+
 # rails
 alias ss='bundle exec rails server'
 alias sc='bundle exec rails console'
@@ -29,7 +30,7 @@ alias rst='touch tmp/restart.txt'
 
 # commands starting with % for pasting from web
 alias %=' '
- 
+
 # misc
 alias reload='. ~/.bash_profile'
 alias vim='mvim'
