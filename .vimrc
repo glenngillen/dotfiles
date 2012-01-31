@@ -1,3 +1,32 @@
+filetype off                   " required!
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" let Vundle manage Vundle
+" required!
+Bundle 'gmarik/vundle'
+
+" vim plugins managed via Vundle
+"
+" github repos
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-bundler'
+Bundle 'tpope/vim-markdown'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-haml'
+Bundle 'scrooloose/nerdtree'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+Bundle 'tpope/vim-rails.git'
+
+" vim-scripts repos
+
+
+" non-github repos
+Bundle 'git://git.wincent.com/command-t.git'
+
 scriptencoding utf-8 " Sets the script encoding
 set nowrap " Default to not wrapping text. HAML and JS can look a mess if we do
 set nocompatible " Don't try and be compatible with plain ol' Vi
