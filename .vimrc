@@ -56,16 +56,6 @@ set nowritebackup " Still don't make a backup (setting to true writes one but de
 set directory=.,$HOME/tmp,/var/tmp,/tmp " Directory names for the swap files
 
 set laststatus=1 " Display a status line only if we have multiple windows
-call pathogen#runtime_append_all_bundles()
-
-let NERDTreeIgnore=['\.git$', '^tmp$', '^log$','^\..*\.swp$','\.bundle$']
-let NERDTreeChDirMode=1
-let NERDShutUp=1
-let NERDTreeQuitOnOpen=1
-let NERDChristmasTree = 1
-let NERDTreeHighlightCursorline = 1
-let NERDTreeShowHidden = 1
-
 
 let mapleader = "," " Set the leader to ,
 
@@ -73,25 +63,10 @@ let mapleader = "," " Set the leader to ,
 autocmd BufWritePre * :%s/\s\+$//e
 
 " Auto-indent settings
-autocmd FileType ruby,eruby,yaml set autoindent shiftwidth=2 softtabstop=2 tabstop=2 expandtab
-autocmd FileType javascript set autoindent shiftwidth=4 softtabstop=4 tabstop=4 expandtab
 
 " Auto-completion settings
-autocmd FileType ruby set omnifunc=rubycomplete#Complete
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType c set omnifunc=ccomplete#Complete
 
 " Key mappings
-map <silent> <leader>d :NERDTreeFind<Enter>
-map <silent> <leader>t :CommandT<Enter>
-map <leader>F :Ack<space>
-map <silent> <leader>s :RunRubyFocusedUnitTest<Enter>
-map <silent> <leader>S :RunAllRubyTests<Enter>
 command! Reloadvimsource source $MYVIMRC
 nmap <silent> <leader>. :Reloadvimsource<Enter>
 cmap W w
