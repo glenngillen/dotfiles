@@ -1,23 +1,22 @@
 # changing directory to code project
 function c { cd $1; }
 
-function cloudset {
-  if [ ! -n "$1" ]; then
-    unset HEROKU_HOST
-    unset HEROKU_DOMAIN
-    unset ION_USER
-    unset CORE_URL
+function cloudset()
+{
+  if [ "$1" == "" ]; then
+    echo "Usage:  cloudset cloudname"
+  elif [ "$1" == "prod" ]; then
+    export HEROKU_HOST="heroku.com"
+    export ION_DOMAIN="ion.heroku.com"
+  elif [ "$1" == "staging" ]; then
+    export HEROKU_HOST="staging.herokai.com"
+    export ION_DOMAIN="ion-staging.herokai.com"
   else
-    export HEROKU_HOST="https://api.$1.herokudev.com"
-    export CORE_URL="https://api.$1.herokudev.com"
-    export HEROKU_DOMAIN="$1.herokudev.com"
-    export ION_USER="$1"
-    export ION_HOST="$1-ion.heroku.com"
+    export HEROKU_HOST="$1.herokudev.com"
+    export ION_DOMAIN="ion-$1.heroku.com"
   fi
   echo "HEROKU_HOST now set to $HEROKU_HOST"
-  echo "CORE_URL now set to $CORE_URL"
-  echo "HEROKU_DOMAIN now set to $HEROKU_DOMAIN"
-  echo "ION_USER now set to $ION_USER"
+  echo "ION_DOMAIN now set to $ION_DOMAIN"
 }
 
 # alternative to "rails" command to use templates
@@ -81,4 +80,53 @@ function mount_bender_remote {
 function db {
   rvm 1.8.7
   BUNDLE_GEMFILE=~/Development/heroku/docbrown/Gemfile bundle exec ~/Development/heroku/docbrown/bin/docbrown $@
+}
+
+function tab {
+  osascript 2>/dev/null <<EOF
+    tell application "System Events"
+      tell process "Terminal" to keystroke "t" using command down
+    end
+    tell application "Terminal"
+      activate
+      do script with command "cd $PWD; $*" in window 1
+    end tell
+EOF
+}
+
+function start_core {
+  export CORE_URL="http://localhost:3001"
+  export CORE_HOST="http://localhost:3001"
+  export ADDONS_URL="http://localhost:3002"
+  export CORE_SALT="dgfsdgfds0823r;klhdaf09234-gdfs4rtgfsdgsdg09uojgklsmdflkj"
+  export PROVIDER_HASHED_PASSWORD="692b579ecff7fe6c0c1daa878bd24ad612f23c35"
+  cd /Users/glenngillen/Development/heroku/core
+  bundle exec rake test:cloud:bootstrap RAILS_ENV=test --trace
+  script/server -p 3001 -e test
+}
+
+function start_addons {
+  export CORE_URL="http://localhost:3001"
+  export CORE_HOST="http://localhost:3001"
+  export ADDONS_URL="http://localhost:3002"
+  export CORE_USER="provider"
+  export CORE_PASS="provider-secret"
+  cd /Users/glenngillen/Development/heroku/addons
+  sleep 10
+  bundle exec rake test:cloud:bootstrap RAILS_ENV=test --trace
+  bundle exec rails s --debugger -p 3002 -e test
+}
+
+function start_test_cloud {
+  export CORE_URL="http://localhost:3001"
+  export ADDONS_URL="http://localhost:3002"
+  tab start_core
+  tab start_addons
+}
+
+function stop_test_cloud {
+  kill `ps -ef | grep ruby | grep rails | grep 3002 | awk '{print $3}'`
+  kill `ps -ef | grep ruby | grep server | grep 3001 | awk '{print $3}'`
+  unset CORE_URL
+  unset ADDONS_URL
 }
