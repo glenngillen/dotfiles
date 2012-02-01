@@ -29,7 +29,6 @@ __git_ps1 ()
     fi
 }
 
-PS1="\u@\h \e[0;32m\w\e[m\e[0;33m\$(__git_ps1)\e[m\$ "
 # Tell ls to be colourful
 export CLICOLOR=1
 export LSCOLORS=Exfxcxdxbxegedabagacad
