@@ -1,1 +1,2 @@
 source ~/.shell/commands
+alias reload='. ~/.zshrc'
