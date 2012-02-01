@@ -32,5 +32,10 @@ ZSH_THEME="robbyrussell"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
+source ~/.shell/aliases
+source ~/.shell/completions
+source ~/.shell/commands
+source ~/.shell/paths
+source ~/.shell/config
 
 # Customize to your needs...

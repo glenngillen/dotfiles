@@ -1,8 +1,8 @@
-source ~/.bash/aliases
-source ~/.bash/completions
-source ~/.bash/commands
-source ~/.bash/paths
-source ~/.bash/config
+source ~/.shell/aliases
+source ~/.shell/completions
+source ~/.shell/commands
+source ~/.shell/paths
+source ~/.shell/config
 
 if [ -f ~/.bashrc ]; then
   . ~/.bashrc

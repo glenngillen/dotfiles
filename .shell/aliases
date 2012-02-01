@@ -1,0 +1,34 @@
+# cd
+alias ..='cd ..'
+
+# ls
+alias ls="ls -F"
+alias l="ls -lAh"
+alias ll="ls -l"
+alias la='ls -A'
+
+# git
+alias git=hub
+alias gpull='git pull'
+alias gpush='git push'
+alias gpr='git pull --rebase'
+alias gdiff='git diff'
+alias gcom='git commit'
+alias gca='git commit -a'
+alias gco='git checkout'
+alias gbr='git branch'
+alias gst='git status'
+alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
+
+# rails
+alias ss='bundle exec rails server'
+alias sc='bundle exec rails console'
+alias sg='bundle exec rails generate'
+alias tlog='tail -f log/development.log'
+alias migrate='bundle exec rake db:migrate db:test:clone'
+
+# commands starting with % for pasting from web
+alias %=' '
+
+# misc
+alias vim='mvim'
