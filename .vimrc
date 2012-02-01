@@ -116,6 +116,21 @@ imap <C-j> <Down>
 imap <C-k> <Up>
 imap <C-l> <Right>
 
+" Plugin settings
+"
+" NERDTree
+map <leader>d :NERDTreeToggle<Enter>
+
+" Fugitive
+map <leader>gb :Gblame<Enter>
+map <leader>gc :Gcommit<Enter>
+map <leader>gs :Gstatus<Enter>
+map <leader>gg :Ggrep<space>
+map <leader>gmv :Gmove<space>
+map <leader>grm :Gremove<space>
+
+" Bundler
+map <leader>bo :Bopen<Enter>
 
 if isdirectory(@%) == 1
 	vsplit
