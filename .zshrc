@@ -32,11 +32,11 @@ ZSH_THEME="blinks"
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
-source ~/.zsh/aliases
-source ~/.zsh/completions
-source ~/.zsh/commands
-source ~/.zsh/paths
-source ~/.zsh/config
+source ~/.zshrc/aliases
+source ~/.zshrc/completions
+source ~/.zshrc/commands
+source ~/.zshrc/paths
+source ~/.zshrc/config
 
 # Customize to your needs...
 if [ -s ~/.rvm/scripts/rvm ] ; then
