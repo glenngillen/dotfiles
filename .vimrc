@@ -120,6 +120,7 @@ imap <C-l> <Right>
 "
 " NERDTree
 map <leader>d :NERDTreeToggle<Enter>
+let NERDTreeIgnore = ['\.*\.sw?$']
 
 " Fugitive
 map <leader>gb :Gblame<Enter>
