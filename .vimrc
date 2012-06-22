@@ -101,20 +101,20 @@ nmap <silent> <leader>. :Reloadvimsource<Enter>
 cmap W w
 
 " Break bad habits
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
-map <up> <nop>
-
-imap <down> <nop>
-imap <left> <nop>
-imap <right> <nop>
-imap <up> <nop>
-
-imap <C-h> <Left>
-imap <C-j> <Down>
-imap <C-k> <Up>
-imap <C-l> <Right>
+"map <down> <nop>
+"map <left> <nop>
+"map <right> <nop>
+"map <up> <nop>
+"
+"imap <down> <nop>
+"imap <left> <nop>
+"imap <right> <nop>
+"imap <up> <nop>
+"
+"imap <C-h> <Left>
+"imap <C-j> <Down>
+"imap <C-k> <Up>
+"imap <C-l> <Right>
 
 " Plugin settings
 "

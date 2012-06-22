@@ -11,7 +11,7 @@ ZSH_THEME="blinks"
 # CASE_SENSITIVE="true"
 
 # Comment this out to disable weekly auto-update checks
-# DISABLE_AUTO_UPDATE="true"
+DISABLE_AUTO_UPDATE="true"
 
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
@@ -24,7 +24,7 @@ ZSH_THEME="blinks"
 
 plugins=(git osx ruby cloudapp bundler brew rvm)
 
-source $ZSH/oh-my-zsh.sh
+source ~/.oh-my-zsh/oh-my-zsh.sh
 source ~/.zsh/aliases
 source ~/.zsh/completions
 source ~/.zsh/commands
@@ -35,3 +35,4 @@ source ~/.zsh/config
 if [ -s ~/.rvm/scripts/rvm ] ; then
   . ~/.rvm/scripts/rvm
 fi
+eval "$(ion-client shell)"

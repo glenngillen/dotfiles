@@ -1,0 +1,1 @@
+/Users/glenngillen/dotfiles/.zsh
