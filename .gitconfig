@@ -33,3 +33,7 @@
 	unadd = update-index --force-remove
 	ls = !git ls-files -m | xargs ls -la
 
+[credential]
+	helper = osxkeychain
+[core]
+	excludesfile = /Users/glenngillen/.gitignore_global
