@@ -2,3 +2,13 @@
 
 A collection of files, functions, and scripts I install on a new machine
 to make life easier.
+
+## Installing Vim Plugins
+
+I'm using [Vundler](https://github.com/gmarik/vundle), so update `.vimrc` and add a line like:
+
+```vim
+Bundle 'tpope/vim-rails.git'
+```
+
+Then reload vim source (`!` or `,.`) and run `:BundleInstall`

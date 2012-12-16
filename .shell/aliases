@@ -15,13 +15,25 @@ alias gpr='git pull --rebase'
 alias gdiff='git diff'
 alias gcom='git commit'
 alias gca='git commit -a'
+alias gcam='git commit -am'
 alias gco='git checkout'
 alias gbr='git branch'
 alias gst='git status'
 alias grm="git status | grep deleted | awk '{print \$3}' | xargs git rm"
+alias gphm="git push heroku master"
+alias gpsm="git push staging master"
+alias gadd="git add"
+
+# heroku
+alias hk=heroku
+alias hkr='hk restart -a'
+alias hkc='hk config -a'
+alias hklog='hk logs --tail -a'
+alias hkps='hk ps -a'
+alias hkenv='export $(cat .env)'
 
 # rails
-alias ss='bundle exec rails server'
+alias ss='foreman start web'
 alias sc='bundle exec rails console'
 alias sg='bundle exec rails generate'
 alias tlog='tail -f log/development.log'

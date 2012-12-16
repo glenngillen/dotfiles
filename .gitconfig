@@ -37,3 +37,5 @@
 	helper = osxkeychain
 [core]
 	excludesfile = /Users/glenngillen/.gitignore_global
+[ghi]
+	token = f1d639b62052c031679cde3e93b55240754fef1c

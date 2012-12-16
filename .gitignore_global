@@ -39,3 +39,4 @@ Thumbs.db
 
 # Editor generated files #
 *.sw?
+.sass-cache
