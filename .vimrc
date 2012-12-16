@@ -26,6 +26,7 @@ Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
 Bundle "honza/snipmate-snippets"
 Bundle 'garbas/vim-snipmate'
+Bundle 'mileszs/ack.vim'
 
 " vim-scripts repos
 
@@ -136,6 +137,8 @@ map <leader>gg :Ggrep<space>
 map <leader>gmv :Gmove<space>
 map <leader>grm :Gremove<space>
 
+" Ack
+map <leader>f :Ack<space>
 " Bundler
 map <leader>bo :Bopen<Enter>
 
