@@ -44,6 +44,11 @@ alias sg='bundle exec rails generate'
 alias tlog='tail -f log/development.log'
 alias migrate='bundle exec rake db:migrate db:test:clone'
 
+# bundler
+alias be='bundler exec'
+alias bi='bundler install'
+alias bu='bundle update'
+
 # commands starting with % for pasting from web
 alias %=' '
 
