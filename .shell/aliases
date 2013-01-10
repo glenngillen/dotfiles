@@ -31,6 +31,11 @@ alias hkc='hk config -a'
 alias hklog='hk logs --tail -a'
 alias hkps='hk ps -a'
 alias hkenv='export $(cat .env)'
+hkadd() { hk addons:add "$1" -a "$2" }
+hkopen() { hk addons:open "$1" -a "$2" }
+hkrestart() { hk ps:restart "$1" -a "$2" }
+hkdeploy() { hk deploy "$1" -a "$2" }
+hkclone() { git clone "git@heroku.com:$1.git" }
 
 # rails
 alias ss='foreman start web'
