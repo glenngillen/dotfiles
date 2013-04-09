@@ -4,7 +4,7 @@
 :bulk_threshold: 1000
 :sources:
 - http://rubygems.org/
-- https://heroku-internal-gems.s3.amazonaws.com/19786ce1b01a785a53f2d48d1a3d878f203bb360eb63bc29/
+- https://heroku-internal-gems.s3.amazonaws.com/fdc7380ffb94db85ebd252cfaa22659335a0573a229d197a/
 :update_sources: true
 :verbose: true
-gem: --no-rdoc
+gem: --no-rdoc --no-ri
