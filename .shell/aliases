@@ -51,6 +51,3 @@ alias bu='bundle update'
 
 # commands starting with % for pasting from web
 alias %=' '
-
-# misc
-alias vim='mvim'
