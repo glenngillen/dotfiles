@@ -8,3 +8,4 @@ export PATH=$PATH:$HOME/.rvm/bin
 export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 export PATH="$PATH:/usr/local/share/npm/bin"
 export PATH="$PATH:$HOME/Development/depot_tools"
+export CDPATH=".:$HOME/Development/:$HOME/Development/heroku/"

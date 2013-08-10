@@ -1,3 +1,2 @@
-cdpath=(. ~/Development/ ~/Development/heroku/)
 typeset -gU cdpath
 setopt autocd
