@@ -13,6 +13,7 @@ rm -rf ~/.tmux.conf
 rm -rf ~/.zshrc
 rm -rf ~/.zsh
 rm -rf ~/.shell
+rm -rf ~/.psqlrc
 
 ln -s ~/dotfiles/.bash ~/.bash
 ln -s ~/dotfiles/.bash_profile ~/.bash_profile
