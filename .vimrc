@@ -20,7 +20,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'tpope/vim-rails.git'
-Bundle 'glenngillen/hamstache.vim'
 Bundle 'jnwhiteh/vim-golang'
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
@@ -30,6 +29,7 @@ Bundle 'mileszs/ack.vim'
 Bundle 'kchmck/vim-coffee-script'
 
 " vim-scripts repos
+Bundle 'vim-auto-save'
 
 
 " non-github repos
@@ -39,6 +39,7 @@ scriptencoding utf-8 " Sets the script encoding
 set nowrap " Default to not wrapping text. HAML and JS can look a mess if we do
 set nocompatible " Don't try and be compatible with plain ol' Vi
 set autoindent " Automatically indent new lines...
+set autoread
 set smartindent " And try and do it intelligently
 set showmatch " Highly matching brace/bracket to char under cursor
 set nolist " Hides end of line and other characters I don't really care about
@@ -95,6 +96,8 @@ set directory=.,$HOME/tmp,/var/tmp,/tmp " Directory names for the swap files
 set laststatus=1 " Display a status line only if we have multiple windows
 
 let mapleader = "," " Set the leader to ,
+
+let g:auto_save = 1
 
 " kill trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
