@@ -27,13 +27,13 @@ Bundle "honza/snipmate-snippets"
 Bundle 'garbas/vim-snipmate'
 Bundle 'mileszs/ack.vim'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'kien/ctrlp.vim'
 
 " vim-scripts repos
 Bundle 'vim-auto-save'
 
 
 " non-github repos
-Bundle 'git://git.wincent.com/command-t.git'
 
 scriptencoding utf-8 " Sets the script encoding
 set nowrap " Default to not wrapping text. HAML and JS can look a mess if we do
@@ -145,6 +145,8 @@ map <leader>grm :Gremove<space>
 map <leader>f :Ack<space>
 " Bundler
 map <leader>bo :Bopen<Enter>
+" CtrlP
+map <leader>t :CtrlP<Enter>
 
 if isdirectory(@%) == 1
 	vsplit
