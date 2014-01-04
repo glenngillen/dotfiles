@@ -12,3 +12,5 @@ Bundle 'tpope/vim-rails.git'
 ```
 
 Then reload vim source (`!` or `,.`) and run `:BundleInstall`
+
+[![Analytics](https://ga-beacon.appspot.com/UA-46840117-1/dotfiles/readme?pixel)](https://github.com/igrigorik/ga-beacon)
