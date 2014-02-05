@@ -24,7 +24,6 @@
 	default = tracking
 [github]
 	user = rubypond
-	token = abcd93e1bb968acf6ffd027ad4fcaa64
 [alias]
 	ci = commit
 	co = checkout
@@ -32,10 +31,9 @@
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %f %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --all
 	unadd = update-index --force-remove
 	ls = !git ls-files -m | xargs ls -la
+	praise = blame
 
 [credential]
 	helper = osxkeychain
 [core]
-	excludesfile = /Users/glenngillen/.gitignore_global
-[ghi]
-	token = f1d639b62052c031679cde3e93b55240754fef1c
+	excludesfile = /Users/ggillen/.gitignore_global
