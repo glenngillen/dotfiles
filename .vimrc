@@ -139,6 +139,8 @@ map <leader>gs :Gstatus<Enter>
 map <leader>gg :Ggrep<space>
 map <leader>gmv :Gmove<space>
 map <leader>grm :Gremove<space>
+map <leader>gpush :Git push<Enter>
+map <leader>gpull :Git pull --rebase<Enter>
 
 " Ack
 map <leader>f :Ack<space>
