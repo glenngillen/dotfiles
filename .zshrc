@@ -37,3 +37,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 # Path completions
 typeset -gU cdpath
 setopt autocd
+
+# Clear right prompt
+RPROMPT=""
