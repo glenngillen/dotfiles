@@ -1,28 +1,6 @@
 # changing directory to code project
 function c { cd $1; }
 
-function cloudset()
-{
-  if [ "$1" == "" ]; then
-    echo "Usage:  cloudset cloudname"
-  elif [ "$1" == "prod" ]; then
-    export HEROKU_HOST="heroku.com"
-    export ION_DOMAIN="ion.heroku.com"
-  elif [ "$1" == "staging" ]; then
-    export HEROKU_HOST="staging.herokai.com"
-    export ION_DOMAIN="ion-staging.herokai.com"
-  else
-    export HEROKU_HOST="$1.herokudev.com"
-    export ION_DOMAIN="ion-$1.heroku.com"
-  fi
-  echo "HEROKU_HOST now set to $HEROKU_HOST"
-  echo "ION_DOMAIN now set to $ION_DOMAIN"
-}
-
-function pg_start {
-  pg_ctl start --pgdata /Users/glenngillen/Library/Application\ Support/postgresql/data --silent &
-}
-
 GRC=`which grc`
 if [ "$TERM" != dumb ] && [ -n GRC ]
 then

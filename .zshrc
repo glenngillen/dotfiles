@@ -35,7 +35,6 @@ source ~/.zsh/config
 if [ -s ~/.rvm/scripts/rvm ] ; then
   . ~/.rvm/scripts/rvm
 fi
-eval "$(ion-client shell)"
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"

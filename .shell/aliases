@@ -35,7 +35,6 @@ hkopen() { hk addons:open "$1" -a "$2" }
 hkrestart() { hk ps:restart "$1" -a "$2" }
 hkdeploy() { hk deploy "$1" -a "$2" }
 hkclone() { git clone "git@heroku.com:$1.git" }
-alias apicon='ion-client run -a api bin/console'
 
 # rails
 alias ss='foreman start web'
