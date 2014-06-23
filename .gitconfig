@@ -33,7 +33,5 @@
 	ls = !git ls-files -m | xargs ls -la
 	praise = blame
 
-[credential]
-	helper = osxkeychain
 [core]
-	excludesfile = /Users/ggillen/.gitignore_global
+	excludesfile = /Users/glenn/.gitignore_global
