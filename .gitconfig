@@ -18,12 +18,10 @@
 	untracked = cyan
 [branch]
 	autosetupmerge = true
-[heroku]
-	account = work
 [push]
 	default = tracking
 [github]
-	user = rubypond
+	user = glenngillen
 [alias]
 	ci = commit
 	co = checkout
