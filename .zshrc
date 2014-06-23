@@ -40,3 +40,7 @@ fi
 export PATH="/usr/local/heroku/bin:$PATH"
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# Path completions
+typeset -gU cdpath
+setopt autocd

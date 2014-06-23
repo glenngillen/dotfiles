@@ -1,2 +1,0 @@
-typeset -gU cdpath
-setopt autocd
