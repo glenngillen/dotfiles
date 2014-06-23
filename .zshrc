@@ -31,15 +31,8 @@ source ~/.zsh/commands
 source ~/.zsh/paths
 source ~/.zsh/config
 
-# Customize to your needs...
-if [ -s ~/.rvm/scripts/rvm ] ; then
-  . ~/.rvm/scripts/rvm
-fi
-
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 # Path completions
 typeset -gU cdpath
