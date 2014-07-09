@@ -50,3 +50,6 @@ alias bu='bundle update'
 
 # commands starting with % for pasting from web
 alias %=' '
+
+# docker
+alias dr='sudo docker run -t -i -v `pwd`:/app `cat .dockertag` /bin/bash'
