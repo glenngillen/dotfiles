@@ -1,36 +1,36 @@
 filetype off                   " required!
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set shell=/bin/bash
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
 " let Vundle manage Vundle
 " required!
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 " vim plugins managed via Vundle
 "
 " github repos
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-markdown'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-haml'
-Bundle 'scrooloose/nerdtree'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'tpope/vim-rails.git'
-Bundle 'jnwhiteh/vim-golang'
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "honza/vim-snippets"
-Bundle 'garbas/vim-snipmate'
-Bundle 'mileszs/ack.vim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-bundler'
+Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-haml'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+Plugin 'tpope/vim-rails.git'
+Plugin 'jnwhiteh/vim-golang'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'honza/vim-snippets'
+Plugin 'garbas/vim-snipmate'
+Plugin 'mileszs/ack.vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'kien/ctrlp.vim'
 
 " vim-scripts repos
-Bundle 'vim-auto-save'
+Plugin 'vim-auto-save'
 
 
 " non-github repos
