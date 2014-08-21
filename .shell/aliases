@@ -53,3 +53,4 @@ alias %=' '
 
 # docker
 alias dr='sudo docker run -t -i -v `pwd`:/app `cat .dockertag` /bin/bash'
+alias di='sudo docker build `cat .dockertag` .'
