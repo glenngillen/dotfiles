@@ -32,4 +32,4 @@
 	praise = blame
 
 [core]
-	excludesfile = /Users/glenn/.gitignore_global
+	excludesfile = /home/glenn/.gitignore_global
