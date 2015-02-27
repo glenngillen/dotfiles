@@ -15,9 +15,7 @@ export GREP_OPTIONS='--color=auto'
 
 export EDITOR="vim"
 export LC_CTYPE=en_US.UTF-8
-export AWS_ACCOUNT_ID=7390-8241-0208
 export NODE_PATH=/usr/local/lib/node_modules
-export DOCBROWN_SSH_PROXY=bastion
-
+source ~/.shell_config
 
 [[ -s /Users/glenngillen/.nvm/nvm.sh ]] && . /Users/glenngillen/.nvm/nvm.sh # This loads NVM

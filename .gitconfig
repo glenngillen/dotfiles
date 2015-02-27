@@ -36,3 +36,5 @@
 [merge "gemfilelock"]
 	name = relocks the gemfile.lock
 	driver = bundle install
+[init]
+	templatedir = ~/.git-templates

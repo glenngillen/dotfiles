@@ -3,6 +3,7 @@ rm -rf ~/.bash
 rm -rf ~/.bash_profile
 rm -rf ~/.bashrc
 rm -rf ~/.gemrc
+rm -rf ~/.git-templates
 rm -rf ~/.gitconfig
 rm -rf ~/.gitignore_global
 rm -rf ~/.gvimrc
@@ -19,6 +20,7 @@ ln -s ~/dotfiles/.bash ~/.bash
 ln -s ~/dotfiles/.bash_profile ~/.bash_profile
 ln -s ~/dotfiles/.bashrc ~/.bashrc
 ln -s ~/dotfiles/.gemrc ~/.gemrc
+ln -s ~/dotfiles/.git-templates ~/.git-templates
 ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/dotfiles/.gitignore_global ~/.gitignore_global
 ln -s ~/dotfiles/.gvimrc ~/.gvimrc
