@@ -22,9 +22,10 @@ DISABLE_AUTO_TITLE="true"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 # COMPLETION_WAITING_DOTS="true"
 
-plugins=(git osx ruby cloudapp bundler brew)
+plugins=(git osx ruby cloudapp bundler brew tmux tmuxinator)
 
 source ~/.oh-my-zsh/oh-my-zsh.sh
+source ~/.bin/tmuxinator.zsh
 source ~/.zsh/aliases
 source ~/.zsh/completions
 source ~/.zsh/commands
@@ -40,3 +41,12 @@ setopt autocd
 
 # Clear right prompt
 RPROMPT=""
+title() {
+  print -Pn "\e]1;$1:q\a"
+}
+
+indicate_tmux_session_in_terminal() {
+  title "$(tmux display-message -p '#S')"
+}
+
+precmd_functions=($precmd_functions indicate_tmux_session_in_terminal)

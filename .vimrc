@@ -60,6 +60,7 @@ set spelllang=en_gb,en_us,en " Sets the dictionaries to use
 set ttyfast " Turns on fast terminal connection. You're probably working directly on the terminal
 set completeopt= " don't use a pop up menu for completions
 set shiftround " when at 3 spaces, and I hit > ... go to 4, not 5
+set tags+=gems.tags
 
 " Folding {
     set foldenable " Turn on folding
@@ -80,7 +81,6 @@ set shiftround " when at 3 spaces, and I hit > ... go to 4, not 5
 
 set showcmd " Show the current command at the bottom of the screen
 set showmode " Show the current Vi mode
-set title " Set the title of the window to the current filename
 set visualbell " Use a visual cue instead of beeping
 set incsearch " Match searches as the are typed
 set hidden " Hide open documents when switching files, don't unload them

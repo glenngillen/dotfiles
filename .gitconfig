@@ -32,4 +32,7 @@
 	praise = blame
 
 [core]
-	excludesfile = /home/glenn/.gitignore_global
+	excludesfile = /Users/glenn/.gitignore_global
+[merge "gemfilelock"]
+	name = relocks the gemfile.lock
+	driver = bundle install
