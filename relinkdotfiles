@@ -16,6 +16,8 @@ rm -rf ~/.zsh
 rm -rf ~/.shell
 rm -rf ~/.psqlrc
 
+rm -f /usr/local/rvm/gemsets/global.gems
+
 ln -s ~/dotfiles/.bash ~/.bash
 ln -s ~/dotfiles/.bash_profile ~/.bash_profile
 ln -s ~/dotfiles/.bashrc ~/.bashrc
@@ -32,3 +34,5 @@ ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.zsh ~/.zsh
 ln -s ~/dotfiles/.shell ~/.shell
 ln -s ~/dotfiles/.psqlrc ~/.psqlrc
+
+ln -s /usr/local/rvm/gemsets/global.gems ~/.rvm/global.gems
