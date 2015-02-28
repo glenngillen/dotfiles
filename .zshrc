@@ -25,7 +25,6 @@ DISABLE_AUTO_TITLE="true"
 plugins=(git osx ruby cloudapp brew tmux tmuxinator)
 
 source ~/.oh-my-zsh/oh-my-zsh.sh
-source ~/.bin/tmuxinator.zsh
 source ~/.zsh/aliases
 source ~/.zsh/completions
 source ~/.zsh/commands
