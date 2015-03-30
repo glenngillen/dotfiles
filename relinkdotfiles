@@ -35,4 +35,4 @@ ln -s ~/dotfiles/.zsh ~/.zsh
 ln -s ~/dotfiles/.shell ~/.shell
 ln -s ~/dotfiles/.psqlrc ~/.psqlrc
 
-ln -s /usr/local/rvm/gemsets/global.gems ~/.rvm/global.gems
+ln -s ~/dotfiles/.rvm/global.gems /usr/local/rvm/gemsets/global.gems
