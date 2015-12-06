@@ -24,12 +24,12 @@ DISABLE_AUTO_TITLE="true"
 
 plugins=(git osx ruby cloudapp brew tmux tmuxinator)
 
-source ~/.oh-my-zsh/oh-my-zsh.sh
+source ~/.zsh/paths
 source ~/.zsh/aliases
 source ~/.zsh/completions
 source ~/.zsh/commands
-source ~/.zsh/paths
 source ~/.zsh/config
+source ~/.oh-my-zsh/oh-my-zsh.sh
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"

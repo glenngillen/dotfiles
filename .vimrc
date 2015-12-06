@@ -30,11 +30,11 @@ Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
 
 " vim-scripts repos
-Plugin 'vim-auto-save'
 
 
 " non-github repos
 
+call vundle#end()
 scriptencoding utf-8 " Sets the script encoding
 set nowrap " Default to not wrapping text. HAML and JS can look a mess if we do
 set nocompatible " Don't try and be compatible with plain ol' Vi
@@ -95,8 +95,6 @@ set directory=.,$HOME/tmp,/var/tmp,/tmp " Directory names for the swap files
 set laststatus=1 " Display a status line only if we have multiple windows
 
 let mapleader = "," " Set the leader to ,
-
-let g:auto_save = 1
 
 " kill trailing whitespace on save
 autocmd BufWritePre * :%s/\s\+$//e
