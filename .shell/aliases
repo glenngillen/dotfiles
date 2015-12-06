@@ -52,5 +52,8 @@ alias bu='bundle update'
 alias %=' '
 
 # docker
-alias dr='sudo docker run -t -i -v `pwd`:/app `cat .dockertag` /bin/bash'
-alias di='sudo docker build -t `cat .dockertag` .'
+alias dzr='sudo docker run -t -i -v `pwd`:/app `cat .dockertag` /bin/bash'
+alias dzi='sudo docker build -t `cat .dockertag` .'
+alias dzs='docker-machine start default && eval $(docker-machine env default)'
+alias dzcu='docker-compose up'
+alias dzcr='docker-compose run web'
