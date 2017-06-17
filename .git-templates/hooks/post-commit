@@ -16,4 +16,4 @@ DATE_TODAY=$(date +"%Y-%m-%d")
 # OPTIONAL - Label
 LABEL='code commit'
 
-  curl --data "key=$RESCUETIME_API_KEY&highlight_date=$DATE_TODAY&description=$MESSAGE&source=$LABEL" https://www.rescuetime.com/anapi/highlights_post
+#curl --data "key=$RESCUETIME_API_KEY&highlight_date=$DATE_TODAY&description=$MESSAGE&source=$LABEL" https://www.rescuetime.com/anapi/highlights_post

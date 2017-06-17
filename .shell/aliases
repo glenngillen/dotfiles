@@ -57,3 +57,6 @@ alias dzi='sudo docker build -t `cat .dockertag` .'
 alias dzs='docker-machine start default && eval $(docker-machine env default)'
 alias dzcu='docker-compose up'
 alias dzcr='docker-compose run web'
+
+# tmux
+alias mux='tmuxinator'
