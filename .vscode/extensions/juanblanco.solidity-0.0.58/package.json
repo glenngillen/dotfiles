@@ -1,0 +1,271 @@
+{
+	"name": "solidity",
+	"description": "Ethereum Solidity Language for Visual Studio Code",
+	"keywords": [
+		"solidity",
+		"ethereum",
+		"blockchain",
+		"compiler",
+		"solium",
+		"nethereum",
+		"solhint"
+	],
+	"version": "0.0.58",
+	"publisher": "JuanBlanco",
+	"engines": {
+		"vscode": "^1.28.0"
+	},
+	"contributors": [
+		"Juan Blanco"
+	],
+	"bugs": {
+		"url": "https://github.com/juanfranblanco/vscode-solidity/issues"
+	},
+	"icon": "images/icon.png",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/juanfranblanco/vscode-solidity"
+	},
+	"categories": [
+		"Programming Languages",
+		"Snippets"
+	],
+	"activationEvents": [
+		"onLanguage:solidity",
+		"onCommand:solidity.compile",
+		"onCommand:solidity.codegenNethereumCodeGenSettings",
+		"onCommand:solidity.compile.active",
+		"onCommand:solidity.codegenCSharpProject",
+		"onCommand:solidity.codegenVbNetProject",
+		"onCommand:solidity.codegenFSharpProject",
+		"onCommand:solidity.codegenCSharpProjectAll",
+		"onCommand:solidity.codegenVbNetProjectAll",
+		"onCommand:solidity.codegenFSharpProjectAll",
+		"onCommand:solidity.fixDocument"
+	],
+	"main": "./out/src/extension",
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "nyc --require ts-node/register --require source-map-support/register mocha test/**/*.spec.ts"
+	},
+	"dependencies": {
+		"ajv": "^6.10.0",
+		"ajv-keywords": "^3.4.0",
+		"find-cache-dir": "^2.1.0",
+		"fs-extra": "^4.0.3",
+		"mkdirp": "^0.5.1",
+		"nethereum-codegen": "^1.0.11",
+		"require-from-string": "^2.0.2",
+		"solc": "^0.5.10",
+		"solhint": "^2.0.0",
+		"solium": "^1.2.4",
+		"solparse": "^2.2.8",
+		"yaml-js": "0.2.3",
+		"vscode-languageclient": "^5.2.1",
+		"vscode-languageserver": "^5.2.1"
+	},
+	"devDependencies": {
+		"@types/isomorphic-fetch": "0.0.35",
+		"@types/node": "^11.11.4",
+		"ts-node": "^7.0.1",
+		"tslint": "^5.14.0",
+		"typescript": "^3.3.4000",
+		"vscode": "^1.1.32"
+	},
+	"nyc": {
+		"extension": [
+			".ts"
+		],
+		"include": [
+			"src/**/*.ts"
+		],
+		"exclude": [
+			"**/*.d.ts",
+			"out",
+			"dist"
+		],
+		"all": true
+	},
+	"contributes": {
+		"configuration": {
+			"type": "object",
+			"title": "Solidity configuration",
+			"properties": {
+				"solidity.compileUsingRemoteVersion": {
+					"type": [
+						"string",
+						"null"
+					],
+					"default": null,
+					"description": "Compile using a remote version instead of the current one, for example: 'latest' or 'v0.4.3+commit.2353da71'"
+				},
+				"solidity.compileUsingLocalVersion": {
+					"type": [
+						"string",
+						"null"
+					],
+					"default": null,
+					"description": "Compile using a local version instead of the current one, for example: 'C://v0.4.3+commit.2353da71.js'"
+				},
+				"solidity.linter": {
+					"type": [
+						"boolean",
+						"string"
+					],
+					"default": "solium",
+					"description": "Enables solhint linting. Possible options 'solhint' and 'solium'"
+				},
+				"solidity.solhintRules": {
+					"type": [
+						"object"
+					],
+					"default": null,
+					"description": "Solhint linting validation rules"
+				},
+				"solidity.enabledSolium": {
+					"type": [
+						"boolean"
+					],
+					"default": false,
+					"description": "Enables solium linting. DEPRECATED: Use \"linter\" instead"
+				},
+				"solidity.soliumRules": {
+					"type": [
+						"object"
+					],
+					"default": {
+						"imports-on-top": 0,
+						"variable-declarations": 0,
+						"indentation": [
+							"off",
+							4
+						],
+						"quotes": [
+							"off",
+							"double"
+						]
+					},
+					"description": "Solium linting validation rules"
+				},
+				"solidity.enabledAsYouTypeCompilationErrorCheck": {
+					"type": [
+						"boolean"
+					],
+					"default": true,
+					"description": "Enables as you type compilation of the document and error highlighting"
+				},
+				"solidity.validationDelay": {
+					"type": [
+						"number"
+					],
+					"default": 1500,
+					"description": "Delay to trigger the validation of the changes of the current document (compilation, solium)"
+				},
+				"solidity.packageDefaultDependenciesDirectory": {
+					"type": [
+						"string"
+					],
+					"default": "node_modules",
+					"description": "Default directory for Packages Dependencies, i.e: 'node_modules', 'lib'"
+				},
+				"solidity.packageDefaultDependenciesContractsDirectory": {
+					"type": [
+						"string"
+					],
+					"default": "contracts",
+					"description": "Default directory where the Package Dependency store its contracts, i.e: 'src', 'contracts', or just a blank string ''"
+				}
+			}
+		},
+		"languages": [
+			{
+				"id": "solidity",
+				"aliases": [
+					"Solidity",
+					"solidity"
+				],
+				"extensions": [
+					".sol"
+				],
+				"configuration": "./solidity.configuration.json"
+			}
+		],
+		"commands": [
+			{
+				"command": "solidity.compile",
+				"title": "Solidity: Compile All Solidity Contracts"
+			},
+			{
+				"command": "solidity.compile.active",
+				"title": "Solidity: Compile Current Solidity Contract"
+			},
+			{
+				"command": "solidity.codegenNethereumCodeGenSettings",
+				"title": "Solidity: Create 'nethereum-gen.settings' with default values at root"
+			},
+			{
+				"command": "solidity.codegenCSharpProject",
+				"title": "Solidity: Code generate CSharp contract definition from selected compilation 'contractName.json'"
+			},
+			{
+				"command": "solidity.codegenVbNetProject",
+				"title": "Solidity: Code generate VB.Net contract definition from selected compilation 'contractName.json'"
+			},
+			{
+				"command": "solidity.codegenFSharpProject",
+				"title": "Solidity: Code generate FSharp contract definition from selected compilation 'contractName.json'"
+			},
+			{
+				"command": "solidity.codegenCSharpProjectAll",
+				"title": "Solidity: Code generate CSharp Project from all compiled files"
+			},
+			{
+				"command": "solidity.codegenVbNetProjectAll",
+				"title": "Solidity: Code generate VB.Net Project from all compiled files"
+			},
+			{
+				"command": "solidity.codegenFSharpProjectAll",
+				"title": "Solidity: Code generate FSharp Project from all compiled files"
+			},
+			{
+				"command": "solidity.fixDocument",
+				"title": "Solidity: Fix document rules using Solium"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "solidity.compile.active",
+				"key": "f5",
+				"mac": "f5",
+				"when": "editorTextFocus && editorLangId == 'solidity'"
+			},
+			{
+				"command": "solidity.compile",
+				"key": "Ctrl+f5",
+				"mac": "Cmd+f5",
+				"when": "editorTextFocus && editorLangId == 'solidity'"
+			}
+		],
+		"snippets": [
+			{
+				"language": "solidity",
+				"path": "./snippets/solidity.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "solidity",
+				"scopeName": "source.solidity",
+				"path": "./syntaxes/solidity.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "25baab03-fe9a-40c7-b683-55c9a0a92480",
+		"publisherId": "9564b3e5-0367-499b-a5e8-02ce946a5ed1",
+		"publisherDisplayName": "Juan Blanco"
+	}
+}
