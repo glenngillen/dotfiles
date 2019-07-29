@@ -11,3 +11,8 @@ source ~/.shell/config
 #if [ -f ~/.localrc ]; then
 #  . ~/.localrc
 #fi
+
+# added by Miniconda3 installer
+export PATH="/Users/glenngillen/miniconda3/bin:$PATH"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

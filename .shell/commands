@@ -17,3 +17,12 @@ then
     alias ping='colourify ping'
     alias traceroute='colourify /usr/sbin/traceroute'
 fi
+
+function dynamo(){
+  cd ~/DynamoDB
+  java -Djava.library.path=./DynamoDBLocal_lib/ -jar DynamoDBLocal.jar
+}
+
+function setup_tunnel {
+  ssh -l ubuntu -L $1:$2:$1 $2
+}

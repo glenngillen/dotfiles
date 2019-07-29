@@ -18,3 +18,10 @@ export LC_CTYPE=en_US.UTF-8
 export NODE_PATH=/usr/local/lib/node_modules
 
 [[ -s /Users/glenngillen/.nvm/nvm.sh ]] && . /Users/glenngillen/.nvm/nvm.sh # This loads NVM
+
+export WORKON_HOME=~/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3
+export VIRTUAL_ENV=/usr/local/bin/virtualenv
+export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+export VIRTUALENVWRAPPER_VIRTUALENV_ARGS='--no-site-packages'
+source /usr/local/bin/virtualenvwrapper.sh
