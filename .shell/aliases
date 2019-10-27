@@ -60,3 +60,5 @@ alias dzcr='docker-compose run web'
 
 # tmux
 alias mux='tmuxinator'
+
+alias python='python3'
