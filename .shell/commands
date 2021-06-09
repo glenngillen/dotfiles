@@ -26,3 +26,9 @@ function dynamo(){
 function setup_tunnel {
   ssh -l ubuntu -L $1:$2:$1 $2
 }
+
+function test_lambda_container {
+  docker run -d -v ~/.aws-lambda-rie:/aws-lambda -p 9000:8080 \
+    --entrypoint /aws-lambda/aws-lambda-rie \
+    $1 $2 $3
+}
