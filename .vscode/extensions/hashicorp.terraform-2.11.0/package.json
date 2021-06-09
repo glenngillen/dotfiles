@@ -1,0 +1,238 @@
+{
+	"icon": "terraform.png",
+	"name": "terraform",
+	"displayName": "HashiCorp Terraform",
+	"description": "Syntax highlighting and autocompletion for Terraform",
+	"version": "2.11.0",
+	"publisher": "hashicorp",
+	"license": "MPL-2.0",
+	"engines": {
+		"vscode": "^1.50.1"
+	},
+	"qna": "https://discuss.hashicorp.com/c/terraform-core/terraform-editor-integrations/46",
+	"bugs": {
+		"url": "https://github.com/hashicorp/vscode-terraform/issues",
+		"email": "terraform-vscode@hashicorp.com"
+	},
+	"categories": [
+		"Programming Languages",
+		"Other",
+		"Formatters",
+		"Linters"
+	],
+	"keywords": [
+		"devops",
+		"terraform",
+		"hcl"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/hashicorp/vscode-terraform.git"
+	},
+	"activationEvents": [
+		"onLanguage:terraform",
+		"onView:terraform-modules",
+		"workspaceContains:**/*.tf",
+		"onCommand:terraform.enableLanguageServer"
+	],
+	"main": "./out/extension",
+	"contributes": {
+		"languages": [
+			{
+				"id": "terraform",
+				"aliases": [
+					"Terraform",
+					"terraform"
+				],
+				"extensions": [
+					".tf"
+				],
+				"configuration": "./language-configuration.json"
+			},
+			{
+				"id": "tfvars",
+				"extensions": [
+					".tfvars"
+				]
+			},
+			{
+				"id": "json",
+				"extensions": [
+					".tfstate"
+				]
+			}
+		],
+		"grammars": [
+			{
+				"language": "terraform",
+				"scopeName": "scope.terraform",
+				"path": "./syntaxes/terraform.tmGrammar.json"
+			},
+			{
+				"language": "tfvars",
+				"scopeName": "scope.terraform",
+				"path": "./syntaxes/terraform.tmGrammar.json"
+			}
+		],
+		"snippets": [
+			{
+				"language": "terraform",
+				"path": "./snippets/terraform.json"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "Terraform",
+			"properties": {
+				"terraform.languageServer": {
+					"type": "object",
+					"description": "Language Server settings",
+					"properties": {
+						"external": {
+							"type": "boolean",
+							"default": true,
+							"description": "Whether an external language server binary should be launched."
+						},
+						"pathToBinary": {
+							"scope": "resource",
+							"type": "string",
+							"default": "",
+							"description": "Path to language server binary (optional)"
+						},
+						"args": {
+							"scope": "resource",
+							"type": "array",
+							"default": [
+								"serve"
+							],
+							"description": "Arguments to pass to language server binary"
+						},
+						"maxNumberOfProblems": {
+							"scope": "resource",
+							"type": "number",
+							"default": 100,
+							"description": "Controls the maximum number of problems produced by the server."
+						},
+						"trace.server": {
+							"scope": "window",
+							"type": "string",
+							"enum": [
+								"off",
+								"messages",
+								"verbose"
+							],
+							"default": "off",
+							"description": "Traces the communication between VS Code and the language server."
+						}
+					},
+					"default": {
+						"external": true,
+						"pathToBinary": "",
+						"args": [
+							"serve"
+						],
+						"maxNumberOfProblems": 100,
+						"trace.server": "off"
+					}
+				},
+				"terraform-ls.rootModules": {
+					"scope": "resource",
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"default": [],
+					"description": "Per-workspace list of module directories for the language server to read"
+				},
+				"terraform-ls.excludeRootModules": {
+					"scope": "resource",
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"default": [],
+					"description": "Per-workspace list of module directories for the language server to exclude"
+				},
+				"terraform-ls.experimentalFeatures": {
+					"scope": "resource",
+					"type": "object",
+					"description": "Experimental (opt-in) terraform-ls features",
+					"properties": {
+						"validateOnSave": {
+							"scope": "resource",
+							"type": "boolean",
+							"default": false
+						}
+					}
+				}
+			}
+		},
+		"commands": [
+			{
+				"command": "terraform.enableLanguageServer",
+				"title": "Terraform: Enable Language Server"
+			},
+			{
+				"command": "terraform.disableLanguageServer",
+				"title": "Terraform: Disable Language Server"
+			},
+			{
+				"command": "terraform.init",
+				"title": "Terraform: init"
+			},
+			{
+				"command": "terraform.initCurrent",
+				"title": "Terraform: init current folder"
+			},
+			{
+				"command": "terraform.validate",
+				"title": "Terraform: validate"
+			},
+			{
+				"command": "terraform.plan",
+				"title": "Terraform: plan"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"package": "vsce package",
+		"compile": "tsc -b",
+		"watch": "tsc -b -w",
+		"test-compile": "tsc -p ./",
+		"test": "npm run test-compile && node ./out/test/runTest.js"
+	},
+	"dependencies": {
+		"@hashicorp/js-releases": "^1.4.0",
+		"@types/semver": "^7.3.4",
+		"del": "^5.1.0",
+		"openpgp": "^4.10.10",
+		"semver": "^7.3.5",
+		"short-unique-id": "^3.2.3",
+		"vscode-extension-telemetry": "^0.1.7",
+		"vscode-languageclient": "^7.0.0-next.12",
+		"yauzl": "^2.10.0"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.3",
+		"@types/mocha": "^8.2.2",
+		"@types/node": "^12.12.54",
+		"@types/openpgp": "^4.4.15",
+		"@types/vscode": "^1.46.0",
+		"@types/yauzl": "^2.9.1",
+		"@typescript-eslint/eslint-plugin": "^3.9.0",
+		"@typescript-eslint/parser": "^3.9.0",
+		"eslint": "^7.6.0",
+		"glob": "^7.1.6",
+		"mocha": "^8.2.1",
+		"typescript": "^3.9.7",
+		"vsce": "^1.87.1",
+		"vscode-test": "^1.5.2"
+	},
+	"__metadata": {
+		"id": "4a23294b-fd16-4c51-9759-da9936474cf8",
+		"publisherId": "a8dd781d-e144-400a-943c-417165981be2",
+		"publisherDisplayName": "HashiCorp",
+		"installedTimestamp": 1621384321293
+	}
+}

@@ -1,0 +1,111 @@
+{
+	"name": "markdown-links",
+	"displayName": "Markdown Links",
+	"description": "Adds command - Show Graph - that displays a graph of local links between markdown files in the current working directory.",
+	"version": "0.8.0",
+	"publisher": "tchayen",
+	"engines": {
+		"vscode": "^1.45.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"keywords": [
+		"markdown"
+	],
+	"bugs": {
+		"url": "https://github.com/tchayen/markdown-links/issues"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/tchayen/markdown-links"
+	},
+	"license": "MIT",
+	"activationEvents": [
+		"onLanguage:markdown",
+		"onCommand:markdown-links.showGraph"
+	],
+	"main": "./dist/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "markdown-links.showGraph",
+				"title": "Markdown Links: Show Graph"
+			}
+		],
+		"configuration": {
+			"title": "Markdown Links",
+			"properties": {
+				"markdown-links.showColumn": {
+					"type": "string",
+					"default": "beside",
+					"description": "- active – in the currently focused column.\n- beside – (default) other than the current.\n- one, two, three, four, five, six, seven, eight, nine – respective editor columns."
+				},
+				"markdown-links.openColumn": {
+					"type": "string",
+					"default": "one",
+					"description": "- active – in the currently focused column.\n- beside – other than the current.\n- one (default), two, three, four, five, six, seven, eight, nine – respective editor columns."
+				},
+				"markdown-links.fileIdRegexp": {
+					"type": "string",
+					"default": "\\d{14}",
+					"description": "Regular extension used to find file IDs. First match of this regex in file contents, excluding [[links]], will be used as the file ID. This file ID can be used for wiki-style links."
+				},
+				"markdown-links.autoStart": {
+					"type": "boolean",
+					"default": false,
+					"description": "Should Markdown Links automatically start when a markdown file is opened."
+				},
+				"markdown-links.graphType": {
+					"type": "string",
+					"enum": [
+						"default",
+						"obsidian"
+					],
+					"default": "default",
+					"description": "Choose type of graph appearance."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "webpack --mode production",
+		"webpack": "webpack --mode development",
+		"webpack-dev": "webpack --mode development --watch",
+		"test-compile": "tsc -p ./",
+		"compile": "webpack --mode production",
+		"lint": "eslint src --ext ts",
+		"watch": "tsc -watch -p ./",
+		"pretest": "yarn run compile && yarn run lint",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/mocha": "^7.0.2",
+		"@types/node": "^13.11.0",
+		"@types/vscode": "^1.45.0",
+		"@typescript-eslint/eslint-plugin": "^2.33.0",
+		"@typescript-eslint/parser": "^2.33.0",
+		"eslint": "^6.8.0",
+		"glob": "^7.1.6",
+		"mocha": "^7.1.2",
+		"ts-loader": "^7.0.4",
+		"typescript": "^3.8.3",
+		"vscode-test": "^1.3.0",
+		"webpack": "^4.43.0",
+		"webpack-cli": "^3.3.11"
+	},
+	"dependencies": {
+		"@types/md5": "^2.2.0",
+		"md5": "^2.2.1",
+		"remark-frontmatter": "^2.0.0",
+		"remark-parse": "^8.0.2",
+		"remark-wiki-link": "^0.0.4",
+		"unified": "^9.0.0"
+	},
+	"__metadata": {
+		"id": "947b629a-e9c8-4cb8-8551-45b9088960b5",
+		"publisherId": "a480949d-1849-4c40-89d6-9bc49e3689b4",
+		"publisherDisplayName": "tchayen"
+	}
+}

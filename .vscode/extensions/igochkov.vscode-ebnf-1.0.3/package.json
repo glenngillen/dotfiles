@@ -1,0 +1,60 @@
+{
+	"name": "vscode-ebnf",
+	"displayName": "EBNF Tools",
+	"description": "EBNF Tools for Visual Studio Code",
+	"version": "1.0.3",
+	"publisher": "igochkov",
+	"author": {
+		"email": "igochkov@gmail.com",
+		"name": "Ivaylo Gochkov",
+		"url": "https://github.com/igochkov"
+	},
+	"icon": "images/icon.png",
+	"engines": {
+		"vscode": "^1.0.0"
+	},
+	"license": "MIT",
+	"categories": [
+		"Languages"
+	],
+	"keywords": [
+		"ebnf",
+		"bnf"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/igochkov/vscode-ebnf.git"
+	},
+	"homepage": "https://github.com/igochkov/vscode-ebnf",
+	"bugs": {
+		"url": "https://github.com/igochkov/vscode-ebnf/issues",
+		"email": "igochkov@gmail.com"
+	},
+	"contributes": {
+		"languages": [
+			{
+				"id": "ebnf",
+				"aliases": [
+					"EBNF",
+					"Extended Backus–Naur Form"
+				],
+				"extensions": [
+					".ebnf"
+				],
+				"configuration": "language-configuration.json"
+			}
+		],
+		"grammars": [
+			{
+				"language": "ebnf",
+				"scopeName": "source.ebnf",
+				"path": "syntaxes/ebnf.json"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "e5cc0b98-979b-4790-8df8-42eca4135205",
+		"publisherId": "a206faac-a620-444b-8270-1b64e4c8f854",
+		"publisherDisplayName": "Ivaylo Gochkov"
+	}
+}
