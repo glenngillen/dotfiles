@@ -23,6 +23,9 @@ alias gphm="git push heroku master"
 alias gpsm="git push staging master"
 alias gadd="git add"
 
+# terraform
+alias tf=terraform
+
 # heroku
 alias hk=heroku
 alias hkr='hk restart -a'
