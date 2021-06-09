@@ -22,7 +22,7 @@ DISABLE_AUTO_TITLE="true"
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git osx ruby cloudapp brew tmux tmuxinator)
+plugins=(git osx ruby brew tmux tmuxinator)
 
 source ~/.zsh/paths
 source ~/.zsh/aliases
