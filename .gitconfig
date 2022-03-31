@@ -1,6 +1,8 @@
 [user]
 	name = Glenn Gillen
 	email = me@glenngillen.com
+[includeIf "gitdir:~/Development/work/"]
+	path = ~/Development/work/.gitconfig
 [color]
 	ui = auto
 [color "branch"]

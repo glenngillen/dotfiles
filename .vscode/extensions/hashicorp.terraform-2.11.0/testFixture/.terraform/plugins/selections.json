@@ -1,6 +1,0 @@
-{
-  "registry.terraform.io/hashicorp/vault": {
-    "hash": "h1:zrMv2Z2xJEvJKyu94v8bmSgEH5tBw810KODEbHOOUVs=",
-    "version": "2.14.0"
-  }
-}

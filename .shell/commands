@@ -28,7 +28,7 @@ function setup_tunnel {
 }
 
 function test_lambda_container {
-  docker run -d -v ~/.aws-lambda-rie:/aws-lambda -p 9000:8080 \
+  docker run -d --env LOG_LEVEL=debug -v ~/.aws-lambda-rie:/aws-lambda -p 9000:8080 \
     --entrypoint /aws-lambda/aws-lambda-rie \
     $1 $2 $3
 }
