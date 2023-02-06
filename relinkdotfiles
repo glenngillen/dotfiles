@@ -38,6 +38,5 @@ ln -s ~/dotfiles/.zshenv ~/.zshenv
 ln -s ~/dotfiles/.zprofile ~/.zprofile
 ln -s ~/dotfiles/.shell ~/.shell
 ln -s ~/dotfiles/.psqlrc ~/.psqlrc
-ln -s ~/dotfiles/.vscode ~/.vscode
 
 ln -s ~/dotfiles/.rvm/global.gems ~/.rvm/gemsets/global.gems
