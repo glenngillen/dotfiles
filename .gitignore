@@ -1,3 +1,4 @@
 .vim/.netrwhist
 .*.sw?
 .vim/bundle/*
+.vscode

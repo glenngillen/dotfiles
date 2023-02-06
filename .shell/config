@@ -13,9 +13,16 @@ export LSCOLORS=Exfxcxdxbxegedabagacad
 # Tell grep to highlight matches
 export GREP_OPTIONS='--color=auto'
 
-export EDITOR="vim"
+export EDITOR="code"
 export LC_CTYPE=en_US.UTF-8
 export NODE_PATH=/usr/local/lib/node_modules
+
+if [[ -f '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]]; then
+  source '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+  export NIX_PATH="$HOME/.nix-defexpr"
+fi
+[[ -f "$HOME/.ghcup/env" ]] && source "$HOME/.ghcup/env"
+[[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 
 export WORKON_HOME=~/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=/usr/local/bin/python3

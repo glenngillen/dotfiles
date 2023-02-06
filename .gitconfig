@@ -1,6 +1,7 @@
 [user]
 	name = Glenn Gillen
 	email = me@glenngillen.com
+	signingkey = A9F4550428B2EA3D
 [includeIf "gitdir:~/Development/work/"]
 	path = ~/Development/work/.gitconfig
 [color]
@@ -40,3 +41,10 @@
 	driver = bundle install
 [init]
 	templatedir = ~/.git-templates
+[commit]
+	gpgsign = true
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
