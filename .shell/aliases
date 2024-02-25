@@ -10,6 +10,7 @@ alias la='ls -A'
 # git
 alias gpull='git pull'
 alias gpush='git push'
+alias gfpush='git push --force-with-lease'
 alias gpr='git pull --rebase'
 alias gdiff='git diff'
 alias gcom='git commit'
