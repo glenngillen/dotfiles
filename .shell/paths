@@ -9,7 +9,12 @@ export PATH="/Applications/Postgres.app/Contents/MacOS/bin:$PATH"
 export PATH="$PATH:/usr/local/share/npm/bin"
 export PATH="$PATH:$HOME/Development/depot_tools"
 export PATH="$PATH:$HOME/.cargo/bin"
-export CDPATH=".:$HOME/dev/:$HOME/Development/:$HOME/Dropbox/Apps/ContentFocus.io/"
+export CDPATH=".:$HOME/dev/:$HOME/Development/"
 export GOPATH="$HOME/go"
 export PATH="$PATH:$GOPATH/bin"
 export NVM_DIR="$HOME/.nvm"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

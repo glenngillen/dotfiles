@@ -32,3 +32,10 @@ function test_lambda_container {
     --entrypoint /aws-lambda/aws-lambda-rie \
     $1 $2 $3
 }
+
+function switchyubi() {
+  rm -r ~/.gnupg/private-keys-v1.d
+  gpgconf --kill gpg-agent
+  gpg --card-status
+  gpgconf --launch gpg-agent
+}

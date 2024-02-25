@@ -69,3 +69,5 @@ alias python='python3'
 # productivity hacks/shortcuts
 alias roadmap-sync='npx mechana taskdiff 895446102672007 1200558480024854'
 alias notes='cd ~/Dropbox/docs/notes/foam-notes; code .'
+
+alias o="~/bin/ockam-d.sh"

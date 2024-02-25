@@ -1,7 +1,7 @@
 [user]
 	name = Glenn Gillen
 	email = me@glenngillen.com
-	signingkey = A9F4550428B2EA3D
+	signingkey = 1B634BA2486C4F6C
 [includeIf "gitdir:~/Development/work/"]
 	path = ~/Development/work/.gitconfig
 [color]
@@ -23,6 +23,7 @@
 	autosetupmerge = true
 [push]
 	default = tracking
+	autoSetupRemote = true
 [github]
 	user = glenngillen
 [alias]
@@ -36,6 +37,7 @@
 
 [core]
 	excludesfile = /Users/glenn/.gitignore_global
+	editor = code --wait
 [merge "gemfilelock"]
 	name = relocks the gemfile.lock
 	driver = bundle install
@@ -48,3 +50,5 @@
 	helper = /usr/local/share/gcm-core/git-credential-manager
 [credential "https://dev.azure.com"]
 	useHttpPath = true
+[gpg]
+	program = /opt/homebrew/bin/gpg

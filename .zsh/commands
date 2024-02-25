@@ -1,2 +1,2 @@
 source ~/.shell/commands
-alias reload='. ~/.zshrc'
+alias reload='. ~/.zshenv && . ~/.zprofile && . ~/.zshrc'
