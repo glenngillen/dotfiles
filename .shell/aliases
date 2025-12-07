@@ -72,3 +72,12 @@ alias roadmap-sync='npx mechana taskdiff 895446102672007 1200558480024854'
 alias notes='cd ~/Dropbox/docs/notes/foam-notes; code .'
 
 alias o="~/bin/ockam-d.sh"
+
+
+alias jupytercleanup="jq --indent 1 \
+    '
+    (.cells[] | select(has(\"outputs\")) | .outputs) = []
+    | (.cells[] | select(has(\"execution_count\")) | .execution_count) = null
+    | .metadata = {\"language_info\": {\"name\":\"python\", \"pygments_lexer\": \"ipython3\"}}
+    | .cells[].metadata = {}
+    ' "

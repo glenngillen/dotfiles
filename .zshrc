@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
@@ -63,11 +56,41 @@ title() {
 
 
 export OCKAM_DISABLE_UPGRADE_CHECK=1
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 gpgconf --launch gpg-agent
-# WarpStream
-export PATH="/Users/glenn/.warpstream:$PATH"
+export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
+# export PATH="/opt/homebrew/anaconda3/bin:$PATH"  # commented out by conda initialize
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/homebrew/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/homebrew/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/homebrew/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/homebrew/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
+eval "$(starship init zsh)"
+# bun completions
+[ -s "/Users/glenn/.bun/_bun" ] && source "/Users/glenn/.bun/_bun"
+
+function aws() {
+  if [[ $1 == "login" ]]; then
+    shift # Remove the 'login' argument
+    command aws sso login --sso-session infracost "$@"
+  else
+    command aws "$@"
+  fi
+}
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+source /Users/glenn/.docker/init-zsh.sh || true # Added by Docker Desktop

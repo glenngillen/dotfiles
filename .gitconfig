@@ -1,7 +1,7 @@
 [user]
 	name = Glenn Gillen
 	email = me@glenngillen.com
-	signingkey = 1B634BA2486C4F6C
+	signingkey = 69FA576E56A9C4EDAB44EC641B634BA2486C4F6C
 [includeIf "gitdir:~/Development/work/"]
 	path = ~/Development/work/.gitconfig
 [color]
@@ -34,6 +34,7 @@
 	unadd = update-index --force-remove
 	ls = !git ls-files -m | xargs ls -la
 	praise = blame
+	fpush = push
 
 [core]
 	excludesfile = /Users/glenn/.gitignore_global
@@ -45,10 +46,36 @@
 	templatedir = ~/.git-templates
 [commit]
 	gpgsign = true
+[gpg]
+	program = /opt/homebrew/bin/gpg
+[diff]
+	external = difft	
 [credential]
 	helper = 
 	helper = /usr/local/share/gcm-core/git-credential-manager
 [credential "https://dev.azure.com"]
 	useHttpPath = true
-[gpg]
-	program = /opt/homebrew/bin/gpg
+[filter "nbstripout"]
+	clean = \"/opt/homebrew/anaconda3/bin/python3\" -m nbstripout
+	smudge = cat
+	required = true
+[diff "ipynb"]
+	textconv = \"/opt/homebrew/anaconda3/bin/python3\" -m nbstripout -t
+[diff "jupyternotebook"]
+	command = git-nbdiffdriver diff
+[merge "jupyternotebook"]
+	driver = git-nbmergedriver merge %O %A %B %L %P
+	name = jupyter notebook merge driver
+[difftool "nbdime"]
+	cmd = git-nbdifftool diff \"$LOCAL\" \"$REMOTE\" \"$BASE\"
+[difftool]
+	prompt = false
+[mergetool "nbdime"]
+	cmd = git-nbmergetool merge \"$BASE\" \"$LOCAL\" \"$REMOTE\" \"$MERGED\"
+[mergetool]
+	prompt = false
+[filter "lfs"]
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
